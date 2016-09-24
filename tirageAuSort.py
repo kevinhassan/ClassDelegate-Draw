@@ -44,16 +44,12 @@ def main(argv):
            print('No need to launch program because you have only '+str(n)+' students')
            sys.exit()
        else:
-           numbers = range(len(students))#generate table [0, n-1]
-           i = len(numbers)-n
-           while i < len(numbers): #Remove n index from numbers and students
-            numbers = range(len(students))#generate table [0, n-1]
-            k = len(numbers)-1
+           i = len(students)-n
+           while i < len(students): #Get students to student & Remove n students
+            k = len(students)-1
             l = random.randint(0,k)
-            j = numbers[l] #Get int in the list of number
-            student.append(students[j])#add student selected
-            del students[j]#Remove this student from the list
-            del numbers[l]#Remove the number from list to avoid int random repetition
+            student.append(students[l])#add student selected
+            del students[l]#Remove this student from the list
            print "Les candidats pour les elections sont : "
            for candidat in student:
                print candidat[0], candidat[1]
