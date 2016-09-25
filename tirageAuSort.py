@@ -10,7 +10,7 @@ def extractStudents(filename):
         # open Excel file
         wb = xlrd.open_workbook(str(filename))
     except IOError:
-        print "Oops! No file "+filename+ " has been found !"
+        print ("Oops! No file "+filename+ " has been found !")
     else:
         sh = wb.sheet_by_name(wb.sheet_names()[0])
         for rownum in range(1,sh.nrows):#1 to remove title line
@@ -27,12 +27,12 @@ def main(argv):
    try:
       options, remainder = getopt.getopt(sys.argv[1:], 'f:n:', ['--file=','--number='])
    except getopt.GetoptError:
-      print sys.argv[0] + ' -f <filename> -n <numberOfName>'
+      print (sys.argv[0] + ' -f <filename> -n <numberOfName>')
       sys.exit(2)
    else:
        for opt, arg in options:
         if opt == '-h':
-            print sys.argv[0] + '-f <filename> -n <numberOfName>'
+            print (sys.argv[0] + '-f <filename> -n <numberOfName>')
             sys.exit()
         elif opt in ("-f", "--file"):
             filename = str(arg)
@@ -50,9 +50,9 @@ def main(argv):
             l = random.randint(0,k)
             student.append(students[l])#add student selected
             del students[l]#Remove this student from the list
-           print "Les candidats pour les elections sont : "
+           print("Les candidats pour les elections sont : ")
            for candidat in student:
-               print candidat[0], candidat[1]
+               print (candidat[0], candidat[1])
    else:
        print('error occured')
        sys.exit()
