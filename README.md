@@ -5,7 +5,7 @@
 You need to install xlrd module to extract data from Microsoft Excel spreadsheet
 Download it here : [**link**](https://pypi.python.org/pypi/xlrd#downloads).
 
-** Launch installation with : **
+#### Install with :
 
 ```
   $ tar xz xlrd-x.x.x.tar.gz
